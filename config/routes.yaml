@@ -1,3 +1,28 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /
+   controller: App\Controller\ContactController::index
+   
+lucky:
+   path: /lucky
+   controller: App\Controller\ContactController::lucky
+
+
+new_contact:
+   path: /contact/new
+   controller: App\Controller\ContactController::new
+
+show_contact:
+   path: /contact/{id}
+   controller: App\Controller\ContactController::show
+
+delete_contact:
+   path: /contact/{id}/delete
+   controller: App\Controller\ContactController::delete
+
+edit_contact:
+   path: /contact/{id}/edit
+   controller: App\Controller\ContactController::edit
+
+# save_contact:
+#    path: /contact/save
+#    controller: App\Controller\ContactController::save

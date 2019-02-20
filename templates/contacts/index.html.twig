@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %} Hello Title {% endblock %}
+
+
+{% block body %}
+
+<h1>Contacts List</h1>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Phone</th>
+		<th colspan="3"></th>
+	</tr>
+	{% for contact in contacts %}
+		<tr>
+			<td>{{ contact.name }}</td>
+			<td>{{ contact.address }}</td>
+			<td>{{ contact.phone }}</td>
+			<td><a href="/contact/{{ contact.id }}">Show</a></td>
+			<td><a href="/contact/{{ contact.id }}/edit">Edit</a></td>
+			<td><a href="/contact/{{ contact.id }}/delete" onclick="return confirmDelete();">Delete</a></td>
+		</tr>
+	{% endfor %}
+</table>
+
+<a href="/contact/new">New Contact</a>
+
+
+{% endblock %}
